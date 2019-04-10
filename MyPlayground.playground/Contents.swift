@@ -28,8 +28,7 @@ var inExpPlayers = [[String: String]]()
 var teamDragons = [[String: String]]()
 var teamSharks = [[String: String]]()
 var teamRaptors = [[String: String]]()
-let allTeams = [teamDragons, teamSharks, teamRaptors]
-let numberOfTeams = allTeams.count
+let numberOfTeams = 3
 
 let numberOfPlayersInOneTeam = numberOfPlayer / numberOfTeams
 
@@ -59,6 +58,7 @@ func addPlayersToTeams(from players: [[String: String]], playersInOneTeam: Int) 
 addPlayersToTeams(from: expPlayers, playersInOneTeam: expPlayersInOneTeam)
 addPlayersToTeams(from: inExpPlayers, playersInOneTeam: numberOfPlayersInOneTeam)
 
+let allTeams = [teamDragons, teamSharks, teamRaptors]
 var letters = [String]()
 
 let dragonsPracticeTime = "March 17, 1pm"
@@ -68,10 +68,10 @@ let raptorsPracticeTime = "March 18, 1pm"
 for team in allTeams {
     for player in team {
         switch team {
-        case teamDragons: letters.append("\(player["name"]!) has been elected to \(team) and team practice will take place at \(dragonsPracticeTime)")
-        case teamSharks: letters.append("\(player["name"]!) has been elected to \(team) and team practice will take place at \(sharksPracticeTime)")
-        case teamRaptors: letters.append("\(player["name"]!) has been elected to \(team) and team practice will take place at \(raptorsPracticeTime)")
-        default: break
+        case teamDragons: letters.append("This is to inform \(player["guardianName"]!) that \(player["name"]!) has been elected to team dragons and team practice will take place at \(dragonsPracticeTime)")
+        case teamSharks: letters.append("This is to inform \(player["guardianName"]!) that \(player["name"]!) has been elected to team Sharks and team practice will take place at \(sharksPracticeTime)")
+        case teamRaptors: letters.append("This is to inform \(player["guardianName"]!) that \(player["name"]!) has been elected to team Raptors and team practice will take place at \(raptorsPracticeTime)")
+        default: continue
         }
     }
 }
