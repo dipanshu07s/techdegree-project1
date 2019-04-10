@@ -1,4 +1,5 @@
 
+// Players Data
 
 let player1 = ["name": "Joe Smith", "height": "42", "soccerExperience": "yes", "guardianName": "Jim and Jan Smith"]
 let player2 = ["name": "Jill Tanner", "height": "36", "soccerExperience": "yes", "guardianName": "Clara Tanner"]
@@ -22,8 +23,12 @@ let player18 = ["name": "Herschel Krustofski", "height": "45", "soccerExperience
 let allPlayers = [player1, player2, player3, player4, player5, player6, player7, player8, player9, player10, player11, player12, player13, player14, player15, player16, player17, player18]
 let numberOfPlayer = allPlayers.count
 
+// Players divided into experienced and inexperienced arrays
+
 var expPlayers = [[String: String]]()
 var inExpPlayers = [[String: String]]()
+
+// Array of Teams
 
 var teamDragons = [[String: String]]()
 var teamSharks = [[String: String]]()
@@ -31,6 +36,8 @@ var teamRaptors = [[String: String]]()
 let numberOfTeams = 3
 
 let numberOfPlayersInOneTeam = numberOfPlayer / numberOfTeams
+
+// Dividing player into experienced and inexperienced lists
 
 for player in allPlayers {
     if player["soccerExperience"] == "yes" {
@@ -42,6 +49,8 @@ for player in allPlayers {
 
 let totalExpPlayers = expPlayers.count
 let expPlayersInOneTeam = totalExpPlayers / numberOfTeams
+
+// Adding players to their teams
 
 func addPlayersToTeams(from players: [[String: String]], playersInOneTeam: Int) {
     for player in players {
@@ -64,6 +73,8 @@ var letters = [String]()
 let dragonsPracticeTime = "March 17, 1pm"
 let sharksPracticeTime = "March 17, 3pm"
 let raptorsPracticeTime = "March 18, 1pm"
+
+// Creating letters
 
 for team in allTeams {
     for player in team {
