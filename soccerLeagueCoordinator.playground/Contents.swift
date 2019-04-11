@@ -26,14 +26,15 @@ let numberOfPlayer = allPlayers.count
 // Players divided into experienced and inexperienced arrays
 
 var expPlayers = [[String: String]]()
-var inExpPlayers = [[String: String]]()
+var inexpPlayers = [[String: String]]()
 
 // Array of Teams
 
 var teamDragons = [[String: String]]()
 var teamSharks = [[String: String]]()
 var teamRaptors = [[String: String]]()
-let numberOfTeams = 3
+var allTeams = [teamDragons, teamSharks, teamRaptors]
+let numberOfTeams = allTeams.count
 
 let numberOfPlayersInOneTeam = numberOfPlayer / numberOfTeams
 
@@ -43,7 +44,7 @@ for player in allPlayers {
     if player["soccerExperience"] == "yes" {
         expPlayers.append(player)
     } else if player["soccerExperience"] == "no" {
-        inExpPlayers.append(player)
+        inexpPlayers.append(player)
     }
 }
 
@@ -65,9 +66,9 @@ func addPlayersToTeams(from players: [[String: String]], playersInOneTeam: Int) 
 }
 
 addPlayersToTeams(from: expPlayers, playersInOneTeam: expPlayersInOneTeam)
-addPlayersToTeams(from: inExpPlayers, playersInOneTeam: numberOfPlayersInOneTeam)
+addPlayersToTeams(from: inexpPlayers, playersInOneTeam: numberOfPlayersInOneTeam)
 
-let allTeams = [teamDragons, teamSharks, teamRaptors]
+allTeams = [teamDragons, teamSharks, teamRaptors]
 var letters = [String]()
 
 let dragonsPracticeTime = "March 17, 1pm"
